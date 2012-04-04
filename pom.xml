@@ -7,10 +7,10 @@
     </parent>
 
     <groupId>org.jvnet.hudson.plugins</groupId>
-    <artifactId>chucknorris</artifactId>
+    <artifactId>ragenorris</artifactId>
     <version>0.5-SNAPSHOT</version>
-    <name>ChuckNorris Plugin</name>
-    <description>Displays a picture of Chuck Norris (instead of Jenkins the butler) and a random Chuck Norris 'The Programmer' fact on each build page.</description>
+    <name>RageNorris Plugin</name>
+    <description>A fork of the famous 'Chuck Norris' plugin, which instead displays a picture of a Rage Face (instead of Jenkins the butler) and a random Bruce Schneier fact on each build page.</description>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin</url>
     <packaging>hpi</packaging>
 
@@ -20,6 +20,12 @@
             <name>Cliffano Subagio</name>
             <email>blah@cliffano.com</email>
             <timezone>+10</timezone>
+        </developer>
+        <developer>
+            <id>herder</id>
+            <name>Niklas Herder</name>
+            <email>niklas.herder@gmail.com</email>
+            <timezone>+1</timezone>
         </developer>
     </developers>
     <licenses>
@@ -35,6 +41,11 @@
             <artifactId>mockito-core</artifactId>
             <version>1.7</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome-fetcher</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -126,8 +137,8 @@
     </reporting>
     
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/chucknorris-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/chucknorris-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/chucknorris-plugin</url>
+        <connection>scm:git:git://github.com/herder/chucknorris-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:herder/chucknorris-plugin.git</developerConnection>
+        <url>https://github.com/herder/chucknorris-plugin</url>
     </scm>
 </project>
