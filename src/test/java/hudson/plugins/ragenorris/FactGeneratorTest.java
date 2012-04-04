@@ -1,4 +1,4 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.ragenorris;
 
 import junit.framework.TestCase;
 

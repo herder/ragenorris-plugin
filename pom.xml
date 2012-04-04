@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
@@ -10,8 +11,10 @@
     <artifactId>ragenorris</artifactId>
     <version>0.5-SNAPSHOT</version>
     <name>RageNorris Plugin</name>
-    <description>A fork of the famous 'Chuck Norris' plugin, which instead displays a picture of a Rage Face (instead of Jenkins the butler) and a random Bruce Schneier fact on each build page.</description>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin</url>
+    <description>A fork of the famous 'Chuck Norris' plugin, which instead displays a picture of a Rage Face (instead of
+        Jenkins the butler) and a random Bruce Schneier fact on each build page.
+    </description>
+    <url>https://github.com/herder/ragenorris-plugin</url>
     <packaging>hpi</packaging>
 
     <developers>
@@ -52,8 +55,8 @@
     <repositories>
         <repository>
             <id>jenkins-release-repo</id>
-            <url>http://maven.jenkins-ci.org:8081/content/groups/artifacts/</url>                   
-            <releases>  
+            <url>http://maven.jenkins-ci.org:8081/content/groups/artifacts/</url>
+            <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
@@ -81,10 +84,14 @@
     <reporting>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changes-plugin</artifactId>
+                <version>2.6</version>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.0.4</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -99,6 +106,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.4.0</version>
                 <configuration>
                     <xmlOutput>true</xmlOutput>
                 </configuration>
@@ -117,28 +125,32 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
+                <version>1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-jxr-plugin</artifactId>
             </plugin>
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <configuration>  
-                    <targetJdk>1.5</targetJdk>  
-                </configuration> 
+                <configuration>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
+                <version>2.1</version>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.12</version>
             </plugin>
         </plugins>
     </reporting>
-    
+
     <scm>
-        <connection>scm:git:git://github.com/herder/chucknorris-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:herder/chucknorris-plugin.git</developerConnection>
-        <url>https://github.com/herder/chucknorris-plugin</url>
+        <connection>scm:git:git://github.com/herder/ragenorris-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:herder/ragenorris-plugin.git</developerConnection>
+        <url>https://github.com/herder/ragenorris-plugin</url>
     </scm>
 </project>

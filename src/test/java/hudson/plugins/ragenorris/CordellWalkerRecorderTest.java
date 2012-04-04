@@ -1,7 +1,5 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.ragenorris;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
@@ -9,11 +7,13 @@ import hudson.model.Action;
 import hudson.model.Build;
 import hudson.model.BuildListener;
 import hudson.model.Result;
+import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.TestCase;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class CordellWalkerRecorderTest extends TestCase {
 

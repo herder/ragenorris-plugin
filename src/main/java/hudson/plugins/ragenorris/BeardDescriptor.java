@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.ragenorris;
 
 import hudson.Extension;
 import hudson.model.AbstractProject;
@@ -31,37 +31,39 @@ import hudson.tasks.Publisher;
  * fan of Chuck Norris' beard, please visit <a
  * href="http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997"
  * >http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997</a>.
+ *
  * @author cliffano
  */
 @Extension
 public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
 
-    /**
-     * Constructs a {@link BeardDescriptor}.
-     */
-    public BeardDescriptor() {
-        super(CordellWalkerRecorder.class);
-    }
+	/**
+	 * Constructs a {@link BeardDescriptor}.
+	 */
+	public BeardDescriptor() {
+		super(CordellWalkerRecorder.class);
+	}
 
-    /**
-     * Gets the descriptor display name, used in the post step checkbox
-     * description.
-     * @return the descriptor display name
-     */
-    @Override
-    public final String getDisplayName() {
-        return "Activate Rage Norris";
-    }
+	/**
+	 * Gets the descriptor display name, used in the post step checkbox
+	 * description.
+	 *
+	 * @return the descriptor display name
+	 */
+	@Override
+	public final String getDisplayName() {
+		return "Activate Rage Norris";
+	}
 
-    /**
-     * Checks whether this descriptor is applicable.
-     * @param clazz
-     *            the class
-     * @return true - of course the beard is applicable
-     */
-    @Override
-    public final boolean isApplicable(
-            final Class<? extends AbstractProject> clazz) {
-        return true;
-    }
+	/**
+	 * Checks whether this descriptor is applicable.
+	 *
+	 * @param clazz the class
+	 * @return true - of course the beard is applicable
+	 */
+	@Override
+	public final boolean isApplicable(
+			final Class<? extends AbstractProject> clazz) {
+		return true;
+	}
 }
