@@ -1,8 +1,9 @@
 package hudson.plugins.chucknorris;
 
-import static org.mockito.Mockito.mock;
 import hudson.model.AbstractProject;
 import junit.framework.TestCase;
+
+import static org.mockito.Mockito.mock;
 
 public class BeardDescriptorTest extends TestCase {
 
@@ -13,7 +14,7 @@ public class BeardDescriptorTest extends TestCase {
 	}
 
 	public void testGetDisplayName() {
-		assertEquals("Activate Chuck Norris", descriptor.getDisplayName());
+		assertEquals("Activate Rage Norris", descriptor.getDisplayName());
 	}
 
 	public void testIsApplicableGivesTrue() {

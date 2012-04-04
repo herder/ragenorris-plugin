@@ -28,11 +28,10 @@ import hudson.model.Action;
 import hudson.model.BuildListener;
 import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Recorder;
+import org.kohsuke.stapler.DataBoundConstructor;
 
 import java.io.IOException;
 import java.util.logging.Logger;
-
-import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
  * This class associates a RoundhouseAction to a job or a build. For more info
@@ -71,7 +70,7 @@ public class CordellWalkerRecorder extends Recorder {
      */
     public CordellWalkerRecorder(final FactGenerator factGenerator) {
         this.factGenerator = factGenerator;
-        LOGGER.info("Chuck Norris is activated");
+        LOGGER.info("Rage Norris is activated");
     }
 
     /**
