@@ -21,13 +21,11 @@
  */
 package hudson.plugins.ragenorris;
 
-import com.sun.syndication.feed.synd.SyndEntryImpl;
-import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.FeedException;
-import com.sun.syndication.io.SyndFeedInput;
-import com.sun.syndication.io.XmlReader;
+import com.colorfulsoftware.rss.Item;
+import com.colorfulsoftware.rss.RSS;
+import com.colorfulsoftware.rss.RSSDoc;
 
-import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 import java.util.Random;
@@ -39,15 +37,16 @@ import java.util.logging.Logger;
  *
  * @author cliffano
  */
-public class FactGenerator {
+public class FactGenerator implements Serializable {
 
 	/**
 	 * Random instance.
 	 */
 	private static final Random RANDOM = new Random();
+	public static final String SCHNEIERFACTS_URL = "http://www.schneierfacts.com/rss/random";
 
 
-	private Logger logger = Logger.getLogger(getClass().getCanonicalName());
+	private transient Logger logger = Logger.getLogger(getClass().getCanonicalName());
 
 	/**
 	 * Retrieves a random fact.
@@ -55,16 +54,15 @@ public class FactGenerator {
 	 * @return a random fact
 	 */
 	public String random() {
-		SyndFeedInput input = new SyndFeedInput();
 		try {
-			final SyndFeed build = input.build(new XmlReader(new URL("http://www.schneierfacts.com/rss/random")));
-			final List<SyndEntryImpl> entries = (List<SyndEntryImpl>) build.getEntries();
-			return entries.get(RANDOM.nextInt(entries.size())).getDescription().getValue();
-		} catch (FeedException e) {
-			logger.log(Level.WARNING, e.getMessage(), e);
-		} catch (IOException e) {
+			RSS rss = new RSSDoc().readRSSToBean(new URL(SCHNEIERFACTS_URL));
+			List<Item> items = rss.getChannel().getItems();
+			return items.get(RANDOM.nextInt(items.size())).getDescription().getDescription();
+		}
+		catch (Exception e) {
 			logger.log(Level.WARNING, e.getMessage(), e);
 		}
-		return "Bruce Schneier know Alice and Bob's shared secret.";
+		//return entries.get(RANDOM.nextInt(entries.size())).getDescription().getValue();
+		return "Bruce Schneier knows Alice and Bob's shared secret.";
 	}
 }
